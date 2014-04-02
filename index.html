@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <script src="scripts/lodash.underscore.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script type="text/javascript">
+      (function () {
+
+        angularBooter = {
+          data             : {},
+          controllers      : {},
+          directives       : {},
+          serviceFactories : {},
+          filters          : {},
+          config           : [],
+          dependencies     : []
+        };
+
+        window.myApp = _.clone(angularBooter);
+      })();
+    </script>
+  </head>
+
+  <body ng-app="myApp" ng-controller="baseController">
+    <h1>
+      {{holaMessage}}
+    </h1>
+
+    <script>
+      var myAppModuleName = 'myApp';
+
+      myApp.controllers.baseController = ['$scope', function($scope) {
+        $scope.holaMessage = 'Hello World';
+      }];
+
+      angular.module(myAppModuleName, myApp.dependencies);
+
+      angular.forEach(myApp.serviceFactories, function (serviceFunction, serviceName) {
+        angular.module(myAppModuleName).factory(serviceName, serviceFunction);
+      });
+
+      angular.module(myAppModuleName)
+        .directive(myApp.directives)
+        .controller(myApp.controllers);
+
+      //Load Config If Something Has Been Set
+      if (!_.isEmpty(myApp.config)) {
+        angular.module(myAppModuleName).config(myApp.config);
+      }
+
+      angular.forEach(myApp.filters, function (filterFunction, filterName) {
+        angular.module(myAppModuleName).filter(filterName, filterFunction);
+      });
+    </script>
+  </body>
+</html>
+
