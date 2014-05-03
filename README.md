@@ -10,7 +10,7 @@ Angular Booter is simple javascript function *(a convention really)* that makes 
 	```
 	<script src="angularBooter.js"></script>
 	```
-2. Create an App object be creating a new instance of angularBooter.
+2. Create an App object by generating a new instance of angularBooter.
 
 	 ```
 	<script>
