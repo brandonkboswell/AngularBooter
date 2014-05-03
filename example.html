@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.15/angular-resource.js"></script>
+    <script src="angularBooter.js"></script>
+    <script>
+      //Call This At The Top Of Your Layout
+      myApp = new angularBooter('myApp'); // <-- What do you want to call your ng-app?
+    </script>
+  </head>
+
+  <body ng-cloak ng-app="myApp" ng-controller="titleController">
+
+    <h1>{{message}}</h1>
+
+    <script>
+      myApp.controllers.titleController = function($scope) {
+        //Do Awesome Controller Stuff As Usual
+        $scope.message = 'Angular Is Alive!';
+      };
+
+      myApp.config.push([function() {
+        //Do Awesome Config Stuff As Usual
+      }]);
+
+      //Add A Dependency
+      myApp.dependencies.push('ngResource');
+
+      myApp.directives.myDirective = [function() {
+        return function(scope, element, attrs){
+          //Do Awesome Directive Stuff As Usual
+        };
+      }];
+
+      myApp.filters.myFilter = [(function(){
+        return function(input, attribute) {
+          //Do Awesome Filter Stuff As Usual
+        };
+      })];
+
+      myApp.services.myService = [function () {
+        return function() {
+          //Do Awesome Service Stuff As Usual
+        };
+      }];
+
+      //Call This At The Bottom Of Your Layout
+      myApp.boot();
+    </script>
+  </body>
+</html>
+
