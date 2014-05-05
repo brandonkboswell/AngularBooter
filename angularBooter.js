@@ -1,4 +1,4 @@
-angularBooter = function(appName) {
+AngularBooter = function(appName) {
   return {
     config:       [],
     controllers:  {},
