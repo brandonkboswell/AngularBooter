@@ -14,7 +14,7 @@ Angular Booter is simple javascript function *(a convention really)* that makes 
 
 	 ```
 	<script>
-      myApp = new angularBooter('myApp'); // <-- Pass in what you want to call your ng-app.
+      myApp = new AngularBooter('myApp'); // <-- Pass in what you want to call your ng-app.
     </script>
     ```
 3. Register any Configuration, Controllers, Directives, Dependencies, Filters, Services, or anything else you can register with Angular with your instance of Angular Booter.
