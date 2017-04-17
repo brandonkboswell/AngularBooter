@@ -1,10 +1,10 @@
-#Angular Booter
+# Angular Booter
 By **[Brandon Boswell](http://brandonkboswell.com)**
 
-##What is Angular Booter?
+## What is Angular Booter?
 Angular Booter is simple javascript function *(a convention really)* that makes it easy to use Angular in existing sites without having to move to a Single Page Application. The idea is to be able to sprinkle in Angular into your existing sites where it makes the most sense to have App-like functionality.
 
-##How can I use it?
+## How can I use it?
 1. Import the Angular Booter Javascript file into the top of your Layout
 
 	```
@@ -36,7 +36,7 @@ Angular Booter is simple javascript function *(a convention really)* that makes 
 
 <br>
 
-##Register Controllers
+## Register Controllers
 angularBooter.controllers is just a javascript object, so to register a controller with Angular Booter call:
 
 ```
@@ -44,7 +44,7 @@ myApp.controllers.whateverYouWantToCallYourController = function(){
 	//This is just a standard Angular controller function;
 }
 ```
-##Register Configuration
+## Register Configuration
 angularBooter.config is just a javascript array, so to register a Configuration Setting with Angular Booter just append to the array:
 
 ```
@@ -53,7 +53,7 @@ myApp.config.push([function() {
 }]);
 ```
 
-##Register Directives
+## Register Directives
 angularBooter.directives is just a javascript object, so to register a directive with Angular Booter call:
 
 ```
@@ -64,7 +64,7 @@ myApp.directives.myDirective = [function() {
 }];
 ```
 
-##Register Dependencies
+## Register Dependencies
 angularBooter.dependencies is just a javascript array, so to register a Dependency with Angular Booter just append to the array:
 
 ```
@@ -72,7 +72,7 @@ myApp.dependencies.push('ngResource');
 ```
 
 
-##Register Filters
+## Register Filters
 angularBooter.filters is just a javascript object, so to register a filter with Angular Booter call:
 
 ```
@@ -83,7 +83,7 @@ myApp.filters.myFilter = [(function(){
 })];
 ```
 
-##Register Services
+## Register Services
 
 angularBooter.services is just a javascript object, so to register a service with Angular Booter call:
 
